@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src='https://kit.fontawesome.com/138f20aa8b.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>PESTAÑAS CON JQUERY</h1>
+    <ul class="tabs ancho">
+        <li><a href="#tab1">Opcion 1</a></li>
+        <li><a href="#tab2">Opcion 2</a></li>
+        <li><a href="#tab3">Opcion 3</a></li>
+        <li><a href="#tab4">Opcion 4</a></li>
+    </ul>
+    <div class="tab_container ancho">
+        <div class="tab_content" id="tab1">
+            <h3>opcion 1</h3>
+            <br>
+            <p>Dolore officia aute ipsum do proident sunt culpa laboris duis ut cupidatat anim laboris. Elit aliqua quis voluptate do. Cupidatat qui consequat laboris aliqua reprehenderit ullamco. Ullamco qui labore id sint et fugiat non duis laborum. Velit id ex est quis dolor sint eu laborum reprehenderit eu anim nostrud cillum.</p>
+        </div>
+        <div class="tab_content" id="tab2">
+            <h3>opcion 2</h3>
+            <br>
+            <p>Dolore officia aute ipsum do proident sunt culpa laboris duis ut cupidatat anim laboris. Elit aliqua quis voluptate do. Cupidatat qui consequat laboris aliqua reprehenderit ullamco. Ullamco qui labore id sint et fugiat non duis laborum. Velit id ex est quis dolor sint eu laborum reprehenderit eu anim nostrud cillum.</p>
+        </div>
+        <div class="tab_content" id="tab3">
+            <h3>opcion 3</h3>
+            <br>
+            <p>Dolore officia aute ipsum do proident sunt culpa laboris duis ut cupidatat anim laboris. Elit aliqua quis voluptate do. Cupidatat qui consequat laboris aliqua reprehenderit ullamco. Ullamco qui labore id sint et fugiat non duis laborum. Velit id ex est quis dolor sint eu laborum reprehenderit eu anim nostrud cillum.</p>
+        </div>
+        <div class="tab_content" id="tab4">
+            <h3>opcion 4</h3>
+            <br>
+            <p>Dolore officia aute ipsum do proident sunt culpa laboris duis ut cupidatat anim laboris. Elit aliqua quis voluptate do. Cupidatat qui consequat laboris aliqua reprehenderit ullamco. Ullamco qui labore id sint et fugiat non duis laborum. Velit id ex est quis dolor sint eu laborum reprehenderit eu anim nostrud cillum.</p>
+        </div>
+    </div>
+
+    <script>
+        $(".tab_content").hide();
+        $("ul.tabs li:first").addClass("active").show();
+        $(".tab_content:first").show();
+    </script>
+
+    <script>
+        $("ul.tabs li").click(function(){
+            $("ul.tabs li").removeClass("active");
+            $(this).addClass("active");
+            $(".tab_content").hide();
+
+            var activeTab = $(this).find("a").attr("href");
+            $(activeTab).fadeIn();
+            return false;
+        })
+    </script>
+</body>
+</html>
